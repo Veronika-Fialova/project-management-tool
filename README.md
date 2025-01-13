@@ -1,2 +1,2 @@
-# ALTEPRO-Project-management-tool
+# Project-management-tool
 CodersLab IT Academy FE Final Project
