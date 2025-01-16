@@ -68,30 +68,12 @@ const Sidebar = () => {
 
             {/* NAVBAR LINKS */}
             <nav className="z-10 w-full">
-                <div className='flex items-center px-2 py-2 font-medium'>
-                    <HouseIcon label="Home" href="/" /> 
-                    <span className='px-2'>Home</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'>
-                    <HistoryIcon label="Timeline" href="/timeline" /> 
-                    <span className='px-2'>Timeline</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'>
-                    <SearchIcon label="Search" href="/search" /> 
-                    <span className='px-2'>Search</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'>
-                    <SettingsIcon label="Settings" href="/settings" /> 
-                    <span className='px-2'>Settings</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'>
-                    <UserIcon label="Users" href="/users" /> 
-                    <span className='px-2'>Users</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'>
-                    <UsersIcon label="Teams" href="/teams" /> 
-                    <span className='px-2'>Teams</span>
-                </div>
+            <SidebarLink href="/" icon={HouseIcon} label="Home" />
+            <SidebarLink href="/timeline" icon={HistoryIcon} label="Timeline" />
+            <SidebarLink href="/search" icon={SearchIcon} label="Search" />
+            <SidebarLink href="/settings" icon={SettingsIcon} label="Settings" />
+            <SidebarLink href="/users" icon={UserIcon} label="Users" />
+            <SidebarLink href="/teams" icon={UsersIcon} label="Teams" />
             </nav>
 
              {/* PROJECT LINKS */}
@@ -119,26 +101,11 @@ const Sidebar = () => {
             </button>
             {showPriority && (
                 <>
-                <div className='flex items-center px-2 py-2 font-medium'> 
-                    <AlertCircle label="Urgent" href="/priority/urgent" />
-                    <span className='px-2'>Urgent</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'> 
-                    <ShieldAlert label="High" href="/priority/high" />
-                    <span className='px-2'>High</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'> 
-                    <AlertTriangle label="Medium" href="/priority/medium" />
-                    <span className='px-2'>Medium</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'> 
-                    <AlertOctagon label="Low" href="/priority/low" />
-                    <span className='px-2'>Low</span>
-                </div>
-                <div className='flex items-center px-2 py-2 font-medium'> 
-                    <Layers3Icon label="Backlog" href="/priority/backlog" />
-                    <span className='px-2'>Backlog</span>
-                </div>
+                <SidebarLink href="/priority/urgent" icon={AlertCircle} label="Urgent" />
+                <SidebarLink href="/priority/high" icon={ShieldAlert} label="High" />
+                <SidebarLink href="/priority/medium" icon={AlertTriangle} label="Medium" />
+                <SidebarLink href="/priority/low" icon={AlertOctagon} label="Low" />
+                <SidebarLink href="/priority/backlog" icon={Layers3Icon} label="Backlog" />
                 </>
             )}
         </div> 
