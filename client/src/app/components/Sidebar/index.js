@@ -6,12 +6,12 @@ import {
     AlertCircle, 
     AlertOctagon, 
     AlertTriangle, 
+    Briefcase, 
     ChevronDown, 
     ChevronUp, 
     HistoryIcon, 
     HouseIcon, 
     Layers3Icon, 
-    Link, 
     LockIcon, 
     SearchIcon, 
     SettingsIcon, 
@@ -20,6 +20,7 @@ import {
     UsersIcon, 
     X } from 'lucide-react'
 import Image from 'next/image'
+import Link from "next/link"
 import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 
@@ -69,6 +70,7 @@ const Sidebar = () => {
             {/* NAVBAR LINKS */}
             <nav className="z-10 w-full">
             <SidebarLink href="/" icon={HouseIcon} label="Home" />
+            <SidebarLink href="/projects" icon={Briefcase} label="Projects" />
             <SidebarLink href="/timeline" icon={HistoryIcon} label="Timeline" />
             <SidebarLink href="/search" icon={SearchIcon} label="Search" />
             <SidebarLink href="/settings" icon={SettingsIcon} label="Settings" />
@@ -76,7 +78,7 @@ const Sidebar = () => {
             <SidebarLink href="/teams" icon={UsersIcon} label="Teams" />
             </nav>
 
-             {/* PROJECT LINKS */}
+             {/* PROJECT LINKS 
             <button onClick={() => setShowProjects((prev) => !prev)}
                 className='flex w-full items-center justify-between px-8 py-3 text-gray-500'>
                     <span className="">Projects</span>
@@ -85,11 +87,11 @@ const Sidebar = () => {
                     ) : (
                         <ChevronDown className='h-5 w-5' />
                     )}
-            </button>
+            </button> */}
 
             {/* PROJECT LIST */}
 
-            {/* PRIORITY LINKS */}
+            {/* PRIORITY LINKS 
             <button onClick={() => setShowPriority((prev) => !prev)}
                 className='flex w-full items-center justify-between px-8 py-3 text-gray-500'>
                     <span className="">Priority</span>
@@ -107,7 +109,7 @@ const Sidebar = () => {
                 <SidebarLink href="/priority/low" icon={AlertOctagon} label="Low" />
                 <SidebarLink href="/priority/backlog" icon={Layers3Icon} label="Backlog" />
                 </>
-            )}
+            )}*/}
         </div> 
     </div>
   )
@@ -125,7 +127,7 @@ const SidebarLink = ({ href, icon: Icon, label }) => {
             } justify-start px-8 py-3`}
             >
             {isActive && (
-                <div className="absolute left-0 top-0 h-[100%] w-[5px] bg-blue-200" />
+                <div className="absolute left-0 top-0 h-[100%] w-[5px] bg-lime-400" />
             )}
   
             <Icon className="h-6 w-6 text-gray-800 dark:text-gray-100" />
