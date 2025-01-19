@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import {supabase} from '../supabaseClient'
 import Header from "../components/Header";
+import { useAppSelector } from "../redux";
+import { dataGridClassNames, dataGridSxStyles } from "./projectsTableUtils";
 
 const ProjectsTable = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -30,27 +34,36 @@ const ProjectsTable = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "ID", width: 150, editable: true },
-    { field: "name", headerName: "Name", width: 200, editable: true },
-    { field: "description", headerName: "Description", width: 300, editable: true },
-    { field: "startDate", headerName: "Start Date", width: 150, editable: true },
-    { field: "endDate", headerName: "End Date", width: 150, editable: true },
+    { field: "id", headerName: "ID", width: 15},
+    { field: "name", headerName: "Name", width: 150},
+    { field: "customer", headerName: "Customer", width: 150},
+    { field: "description", headerName: "Description", width: 200},
+    { field: "startDate", headerName: "Start Date", width: 100},
+    { field: "endDate", headerName: "End Date", width: 100},
   ];
 
   return (
     <div className="h-[540px] w-full px-4 pb-8 xl:px-6">
           <div className="pt-5">
-          <Header
-            name="Projects"
-            isSmallText/>
+            <Header
+              name="Projects"
+            />
           </div>
-      <DataGrid
-        rows={projects.map((project) => ({ ...project, id: project.id }))}
-        columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10, 20, 50]}
-        loading={loading}
-      />
+          <DataGrid
+            rows={projects.map((project) => ({ ...project, id: project.id }))}
+            columns={columns}
+            pageSize={10}
+            rowsPerPageOptions={[10, 20]}
+            loading={loading}
+            slots={{ toolbar: GridToolbar }}
+            slotProps={{
+              toolbar: {
+                showQuickFilter: true,
+              },
+            }}
+            className={dataGridClassNames}
+            sx={dataGridSxStyles(isDarkMode)}
+          />
     </div>
   );
 };

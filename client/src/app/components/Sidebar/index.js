@@ -12,6 +12,7 @@ import {
     HistoryIcon, 
     HouseIcon, 
     Layers3Icon, 
+    ListTodo, 
     LockIcon, 
     SearchIcon, 
     SettingsIcon, 
@@ -71,6 +72,7 @@ const Sidebar = () => {
             <nav className="z-10 w-full">
             <SidebarLink href="/" icon={HouseIcon} label="Home" />
             <SidebarLink href="/projects" icon={Briefcase} label="Projects" />
+            <SidebarLink href="/tasks" icon={ListTodo} label="Tasks" />
             <SidebarLink href="/timeline" icon={HistoryIcon} label="Timeline" />
             <SidebarLink href="/search" icon={SearchIcon} label="Search" />
             <SidebarLink href="/settings" icon={SettingsIcon} label="Settings" />
