@@ -3,20 +3,13 @@
 import { useAppDispatch, useAppSelector } from '@/app/redux'
 import { setIsSidebarCollapsed } from '@/app/state'
 import { 
-    AlertCircle, 
-    AlertOctagon, 
-    AlertTriangle, 
     Briefcase, 
-    ChevronDown, 
-    ChevronUp, 
-    HistoryIcon, 
-    HouseIcon, 
-    Layers3Icon, 
+    Clock,  
+    HouseIcon,  
     ListTodo, 
     LockIcon, 
     SearchIcon, 
     SettingsIcon, 
-    ShieldAlert, 
     UserIcon, 
     UsersIcon, 
     X } from 'lucide-react'
@@ -26,9 +19,6 @@ import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 
 const Sidebar = () => {
-    const [showProjects, setShowProjects] = useState(true)
-    const [showPriority, setShowPriority] = useState(true)
-
     const dispatch = useAppDispatch()
     const isSidebarCollapsed = useAppSelector(
         (state) => state.global.isSidebarCollapsed,
@@ -73,45 +63,12 @@ const Sidebar = () => {
             <SidebarLink href="/" icon={HouseIcon} label="Home" />
             <SidebarLink href="/projects" icon={Briefcase} label="Projects" />
             <SidebarLink href="/tasks" icon={ListTodo} label="Tasks" />
-            <SidebarLink href="/timeline" icon={HistoryIcon} label="Timeline" />
+            <SidebarLink href="/timeline" icon={Clock} label="Timeline" />
             <SidebarLink href="/search" icon={SearchIcon} label="Search" />
             <SidebarLink href="/settings" icon={SettingsIcon} label="Settings" />
             <SidebarLink href="/users" icon={UserIcon} label="Users" />
             <SidebarLink href="/teams" icon={UsersIcon} label="Teams" />
             </nav>
-
-             {/* PROJECT LINKS 
-            <button onClick={() => setShowProjects((prev) => !prev)}
-                className='flex w-full items-center justify-between px-8 py-3 text-gray-500'>
-                    <span className="">Projects</span>
-                    {showProjects ? (
-                        <ChevronUp className='h-5 w-5' />
-                    ) : (
-                        <ChevronDown className='h-5 w-5' />
-                    )}
-            </button> */}
-
-            {/* PROJECT LIST */}
-
-            {/* PRIORITY LINKS 
-            <button onClick={() => setShowPriority((prev) => !prev)}
-                className='flex w-full items-center justify-between px-8 py-3 text-gray-500'>
-                    <span className="">Priority</span>
-                    {showPriority ? (
-                        <ChevronUp className='h-5 w-5' />
-                    ) : (
-                        <ChevronDown className='h-5 w-5' />
-                    )}
-            </button>
-            {showPriority && (
-                <>
-                <SidebarLink href="/priority/urgent" icon={AlertCircle} label="Urgent" />
-                <SidebarLink href="/priority/high" icon={ShieldAlert} label="High" />
-                <SidebarLink href="/priority/medium" icon={AlertTriangle} label="Medium" />
-                <SidebarLink href="/priority/low" icon={AlertOctagon} label="Low" />
-                <SidebarLink href="/priority/backlog" icon={Layers3Icon} label="Backlog" />
-                </>
-            )}*/}
         </div> 
     </div>
   )

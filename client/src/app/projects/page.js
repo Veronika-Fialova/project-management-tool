@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import ProjectsTable from './projectsTable'
+import ProjectsTable from './ProjectsTable/index.js'
 
 const Projects = () => {
   return (

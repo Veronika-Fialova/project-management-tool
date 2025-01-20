@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import { Clock, Filter, Grid3x3, List, PlusSquare, Share2, Table } from 'lucide-react';
 
 const TasksHeader = ({ activeTab, setActiveTab }) => {
