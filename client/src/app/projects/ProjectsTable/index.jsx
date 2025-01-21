@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { supabase } from '../../supabaseClient'
+import { supabase } from '../../../supabaseClient'
 import Header from "../../components/Header";
 import { useAppSelector } from "../../redux";
 import { dataGridClassNames, dataGridSxStyles } from "./utils";

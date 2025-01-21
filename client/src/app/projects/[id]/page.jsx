@@ -1,6 +1,6 @@
 
 import Header from '@/app/components/Header';
-import { supabase } from '../../supabaseClient';
+import { supabase } from '../../../supabaseClient';
 
 const fetchProjectData = async (id) => {
   const { data, error } = await supabase
@@ -15,7 +15,7 @@ const fetchProjectData = async (id) => {
 };
 
 const ProjectDetails = async ({ params, isSmallText = false }) => {
-  const { id } = params; 
+  const { id } = await params; 
   const project = await fetchProjectData(id); 
 
   if (!project) {
