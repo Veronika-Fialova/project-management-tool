@@ -3,12 +3,10 @@
 import { useAppDispatch, useAppSelector } from '@/app/redux'
 import { setIsSidebarCollapsed } from '@/app/state'
 import { 
-    Briefcase, 
-    Clock,  
+    Briefcase,  
     HouseIcon,  
     ListTodo, 
     LockIcon, 
-    SearchIcon, 
     SettingsIcon, 
     UserIcon, 
     UsersIcon, 
@@ -16,7 +14,7 @@ import {
 import Image from 'next/image'
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
-import React, { useState } from 'react'
+import React from 'react'
 
 const Sidebar = () => {
     const dispatch = useAppDispatch()
@@ -63,8 +61,6 @@ const Sidebar = () => {
             <SidebarLink href="/" icon={HouseIcon} label="Home" />
             <SidebarLink href="/projects" icon={Briefcase} label="Projects" />
             <SidebarLink href="/tasks" icon={ListTodo} label="Tasks" />
-            <SidebarLink href="/timeline" icon={Clock} label="Timeline" />
-            <SidebarLink href="/search" icon={SearchIcon} label="Search" />
             <SidebarLink href="/settings" icon={SettingsIcon} label="Settings" />
             <SidebarLink href="/users" icon={UserIcon} label="Users" />
             <SidebarLink href="/teams" icon={UsersIcon} label="Teams" />

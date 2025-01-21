@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../../components/Header'
-import { Clock, Filter, Grid3x3, List, PlusSquare, Share2, Table } from 'lucide-react';
+import { Filter, Grid3x3, Share2, Table } from 'lucide-react';
+import TableView from '../TableView';
 
 const TasksHeader = ({ activeTab, setActiveTab }) => {
     return (
@@ -21,24 +22,12 @@ const TasksHeader = ({ activeTab, setActiveTab }) => {
                 activeTab={activeTab}
               />
               <TabButton
-                name="List"
-                icon={<List className="h-5 w-5" />}
-                setActiveTab={setActiveTab}
-                activeTab={activeTab}
-              />
-              <TabButton
-                name="Timeline"
-                icon={<Clock className="h-5 w-5" />}
-                setActiveTab={setActiveTab}
-                activeTab={activeTab}
-              />
-              <TabButton
                 name="Table"
                 icon={<Table className="h-5 w-5" />}
                 setActiveTab={setActiveTab}
                 activeTab={activeTab}
               />
-        </div>
+          </div>
             <div className="flex items-center gap-2">
               <button className="text-gray-500 hover:text-gray-600 dark:text-neutral-500 dark:hover:text-gray-300">
                 <Filter className="h-5 w-5" />
@@ -56,6 +45,9 @@ const TasksHeader = ({ activeTab, setActiveTab }) => {
               </div>
             </div>
           </div>
+
+          {/* CONTENT */}
+          {activeTab === 'Table' && <TableView />}
         </div>
       );
     };

@@ -1,6 +1,7 @@
 
 import Header from '@/app/components/Header';
 import { supabase } from '../../../supabaseClient';
+import ProjectTasksTable from '../ProjectTasksTable/page';
 
 const fetchProjectData = async (id) => {
   const { data, error } = await supabase
@@ -43,9 +44,7 @@ const ProjectDetails = async ({ params, isSmallText = false }) => {
             </details>
           </div>
           <div className="mt-10 mb-5 flex w-full items-center justify-between">
-            <h2 className={`${isSmallText ? "text-lg" : "text-2xl"} font-semibold dark:text-white`}>
-            Tasks
-            </h2>
+            <ProjectTasksTable />
           </div>
       </div>
   );
