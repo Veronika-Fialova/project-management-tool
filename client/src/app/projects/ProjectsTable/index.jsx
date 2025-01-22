@@ -37,10 +37,6 @@ const ProjectsTable = () => {
     fetchProjects();
   }, []);
 
-  const handleProjectAdded = (newProject) => {
-    setProjects((prev) => [...prev, newProject]);
-  };
-
   const columns = [
     { field: "id", headerName: "ID", width: 15},
     { field: "name", headerName: "Name", width: 150},
@@ -93,12 +89,10 @@ const ProjectsTable = () => {
             className={dataGridClassNames}
             sx={dataGridSxStyles(isDarkMode)}
           />
-          {isModalNewProjectOpen && (
           <ModalNewProject
-          onClose={() => setIsModalNewProjectOpen(false)}
-          onProjectAdded={handleProjectAdded}
-        />
-      )}
+            isOpen={isModalNewProjectOpen}
+            onClose={() => setIsModalNewProjectOpen(false)}
+          />
     </div>
   );
 };
