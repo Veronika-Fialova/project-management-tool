@@ -22,6 +22,8 @@ const Sidebar = () => {
         (state) => state.global.isSidebarCollapsed,
   );
 
+    const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
+
     const sidebarClassNames = `fixed flex flex-col h-[100%] justify-between shadow-xl
     transition-all duration-300 h-full z-40 dark:bg-black overflow-y-auto bg-white 
     ${isSidebarCollapsed ? "w-0 hidden" : "w-64"}`
@@ -32,9 +34,12 @@ const Sidebar = () => {
 
             {/* TOP LOGO */}
             <div className="z-50 flex min-h-[56px] w-64 items-center justify-between bg-white px-6 pt-3 dark:bg-black">
-                <div className="text-xl font-bold text-gray-800 dark:text-white">
-                ALTEPRO
-                </div>
+                {isDarkMode ? (
+                    <Image className="pl-2" src="/altepro-white-green.png" alt="ALTEPRO logo" width={130} height={30}/>
+                ): (
+                    <Image className="pl-2" src="/altepro_logo.jpeg" alt="ALTEPRO logo" width={130} height={30}/>
+                )}
+                
                 {isSidebarCollapsed ? null : (
                     <button className="py-3" onClick={() => {dispatch(setIsSidebarCollapsed(!isSidebarCollapsed))}}>
                         <X className='h-6 w-6 text-gray-800 hover:text-gray-500 dark:text-white' />

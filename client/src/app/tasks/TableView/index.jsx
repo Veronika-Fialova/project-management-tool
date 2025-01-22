@@ -37,25 +37,7 @@ const TableView = () => {
   const columns = [
     { field: "title", headerName: "Task", width: 150},
     { field: "description", headerName: "Description", width: 200},
-    { field: "status", headerName: "Status", width: 150,
-      renderCell: (params) => {
-        const statusClassMap = {
-          "To do": "bg-red-200 text-red-700",
-          "Work in Progress": "bg-yellow-200 text-yellow-700",
-          "Under Review": "bg-green-200 text-green-700",
-          Completed: "bg-blue-200 text-blue-700",
-        };
-
-        const statusClass = statusClassMap[params.value] || "bg-gray-200 text-gray-700";
-
-        return (
-          <span
-            className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${statusClass}`}>
-            {params.value}
-          </span>
-        );
-      },
-    },
+    { field: "status", headerName: "Status", width: 150,},
     { field: "priority", headerName: "Priority", width: 150},
   ];
 
