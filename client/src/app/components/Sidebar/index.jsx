@@ -87,7 +87,7 @@ const SidebarLink = ({ href, icon: Icon, label }) => {
             } justify-start px-8 py-3`}
             >
             {isActive && (
-                <div className="absolute left-0 top-0 h-[100%] w-[5px] bg-lime-400" />
+                <div className="absolute left-0 top-0 h-[100%] w-[5px] bg-altepro-light-green" />
             )}
   
             <Icon className="h-6 w-6 text-gray-800 dark:text-gray-100" />

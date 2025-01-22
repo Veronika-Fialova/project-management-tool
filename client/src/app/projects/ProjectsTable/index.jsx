@@ -49,7 +49,10 @@ const ProjectsTable = () => {
         return (
           <div className="flex items-center justify-center">
               <Link href={`/projects/${params.row.id}`}>
-                <button className="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <button className="px-3 py-2 text-xs font-medium text-center text-altepro-green
+                bg-white border-solid border-2 border-altepro-green 
+                hover:bg-altepro-green hover:text-white focus:outline-none focus:ring-0 ring-offset-0
+                dark:bg-transparent dark:hover:bg-altepro-green">
                 View
                 </button>
               </Link>
@@ -66,10 +69,21 @@ const ProjectsTable = () => {
               name="Projects"
               buttonComponent={
             <button
-              className="flex items-center rounded-md bg-blue-primary px-3 py-2 text-white hover:bg-blue-600"
+              className="relative flex items-center justify-between bg-altepro-green opacity-80 text-white font-semibold hover:opacity-100 transition-opacity"
               onClick={() => setIsModalNewProjectOpen(true)}>
-              <PlusSquare className="mr-2 h-5 w-5" /> 
+              <PlusSquare className="m-2 h-5 w-5" /> 
               New Project
+              <div className="grid grid-cols-3 ml-2">
+                <div className="w-3.5 h-3.5 bg-altepro-light-green"></div>
+                <div className="w-3.5 h-3.5 bg-altepro-yellow"></div>
+                <div className="w-3.5 h-3.5 bg-altepro-light-green"></div>
+                <div className="w-3.5 h-3.5 bg-altepro-green"></div>
+                <div className="w-3.5 h-3.5 bg-altepro-light-green"></div>
+                <div className="w-3.5 h-3.5 bg-altepro-yellow"></div>
+                <div className="w-3.5 h-3.5 bg-altepro-green"></div>
+                <div className="w-3.5 h-3.5 bg-altepro-green"></div>
+                <div className="w-3.5 h-3.5 bg-altepro-light-green"></div>
+              </div>
             </button>
               }
             />

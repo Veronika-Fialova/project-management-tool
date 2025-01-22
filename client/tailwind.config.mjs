@@ -28,6 +28,9 @@ export default {
         "dark-tertiary": "#3b3d40",
         "blue-primary": "#0275ff",
         "stroke-dark": "#2d3135",
+        "altepro-light-green": "#c3d234",
+        "altepro-green": "#30b56d",
+        "altepro-yellow": "#e2e149",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

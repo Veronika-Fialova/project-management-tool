@@ -3,9 +3,11 @@
 import React from 'react'
 import Header from '../components/Header'
 
-const Homepage = () => {
+const Homepage = ( {isSmallText = false} ) => {
   return (
-    <Header name="Project Management Dashboard" />
+    <>
+    <Header name="Project Management Dashboard" buttonComponent={undefined} />
+    </>
   )
 }
 
