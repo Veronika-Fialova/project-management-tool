@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../../components/Header'
 import { Filter, Grid3x3, Share2, Table } from 'lucide-react';
 import TableView from '../TableView';
+import BoardView from '../BoardView';
 
 const TasksHeader = ({ activeTab, setActiveTab }) => {
     return (
@@ -47,6 +48,7 @@ const TasksHeader = ({ activeTab, setActiveTab }) => {
           </div>
 
           {/* CONTENT */}
+          {activeTab === 'Board' && <BoardView />}
           {activeTab === 'Table' && <TableView />}
         </div>
       );
