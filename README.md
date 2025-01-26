@@ -14,7 +14,7 @@ CodersLab IT Academy FE Final Project
 
 ## Project assets
 - This project management tool was created for the czech IT company named ALTEPRO solutions a.s.
-- ![ALTEPRO website] (https://www.altepro.cz/)
+- ([ALTEPRO website](https://www.altepro.cz/))
 
 *Project contains company's logo and brand colors. Project does not contain any actual or sensitive company data, all data was used from company's website.*
 
@@ -26,7 +26,7 @@ CodersLab IT Academy FE Final Project
 
 ## Figma Wireframe
 Basic wireframe for this project:
-- ![Figma link] (https://www.figma.com/design/qWXgeiGFVTnp6p1EA5udKM/Untitled?node-id=0-1&t=6OVTU2Xv9JbioSnV-1)
+- ([ALTEPRO FIGMA WIREFRAME](https://www.figma.com/design/qWXgeiGFVTnp6p1EA5udKM/Untitled?node-id=0-1&t=6OVTU2Xv9JbioSnV-1))
 
 ![ALTEPRO Firma Wireframe](/client/public/ALTEPRO%20Figma%20wireframe.png)
 
